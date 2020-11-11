@@ -29,12 +29,14 @@ Including an example of how to use your role (for instance, with variables passe
 
 License
 -------
+GPL-2.0-or-later
 
-BSD
 
 Author Information
 ------------------
 
 http://github.com/j0rdan0
+
 https://acidburn.me
+
 @j0rdan0 ( Twitter)
