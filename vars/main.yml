@@ -1,0 +1,4 @@
+---
+SCRIPT_SRC: "files/check-reboot.sh"
+SCRIPT_DEST: "/tmp/check-reboot.sh"
+

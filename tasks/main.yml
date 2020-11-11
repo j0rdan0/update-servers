@@ -1,0 +1,18 @@
+---
+- name: Update packages on RedHat based devices
+  block:
+    - yum: name="*" state=latest
+    - yum: name=yum-utils state=present
+    - copy: src={{ SCRIPT_SRC }} dest={{ SCRIPT_DEST}} mode=777
+    - command: "{{ SCRIPT_DEST}}"
+      register: reboot_needed
+      notify: reboot RedHat server
+  when: ansible_os_family == "RedHat"
+- name: Update packages on Debian based devices
+  block:
+    - apt: name="*" state=latest
+    - stat: path=/var/run/reboot 
+      register: st
+      notify: reboot Debian server
+  when: ansible_os_family == "Debian"
+

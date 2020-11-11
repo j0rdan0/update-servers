@@ -1,0 +1,9 @@
+---
+# handlers file for update-servers
+- name: reboot RedHat server
+  reboot: reboot_timeout=3600
+  when: reboot_needed.stdout == "1"
+- name: reboot Debian server
+  reboot: reboot_timeout=3600
+  when: st.stat.exists == true
+
